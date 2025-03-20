@@ -1,0 +1,74 @@
+/* تصميم الصفحة الرئيسية */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+/* تصميم الحاوية الرئيسية */
+.main {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+/* تصميم زر الإغلاق */
+.main .close {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+  background: #ff4d4d;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.main .close:hover {
+  transform: scale(1.1);
+}
+
+.main .close ion-icon {
+  color: #fff;
+  font-size: 20px;
+}
+
+/* تصميم القائمة الدائرية */
+.main .navigation {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.main .navigation span {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.main .navigation span ion-icon {
+  font-size: 20px;
+  color: #333;
+}
+
+/* تحريك النقاط بناءً على المتغيرات */
+.main.active .navigation span {
+  transform: translate(calc(var(--x) * 100px), calc(var(--y) * 100px));
+}
